@@ -1,34 +1,51 @@
 <template>
-    <div>
-        {{msg}}
-        <p>
-
-            <van-button type="primary">主要按钮</van-button>
-        </p>
-        <van-row>
-            <van-col span="8">三个平分</van-col>
-            <van-col span="8">三个平分</van-col>
-            <van-col span="8">三个平分</van-col>
-        </van-row>
-        <van-row>
-            <van-col span="4">四份</van-col>
-            <van-col span="10" offset="4">十份,偏移了4份</van-col>
-            <van-col span="6"></van-col>
-        </van-row>
-
-        <van-row>
-            <van-col offset="12" span="12">offset: 12, span: 12</van-col>
-        </van-row>
-    </div>
+    
+        <!-- 搜索布局: -->
+        <div class="search-bar">
+               <van-row>
+                <van-col span="3">
+                    <img :src="locationIcon" width="80%" class="location-icon"/>
+                </van-col>
+                <van-col span="16">
+                    <input type="text" class="search-input" />
+                </van-col>
+                <van-col span="5">
+                    <van-button size="mini">查找</van-button>
+                </van-col>
+            </van-row>
+        </div>
 </template>
 <script>
 export default {
+    name: 'main',
     data() {
         return {
+            locationIcon:require('../../assets/img/location.png'),
             msg: '这是首页',
         }
     },
 }
 </script>
-<style>
+<style scoped>
+    .search-bar{
+        height:2.2rem;
+        background-color: #e5017d;
+        line-height: 2.2rem;
+        overflow: hidden;
+    }
+    .search-input{
+        width:100%;
+        height: 1.3rem;
+        border-top:0px;
+        border-left:0px;
+        border-right:0px;
+        border-bottom:1px solid #fff !important;
+        background-color: #e5017d;
+        color:#fff;
+    }
+    .location-icon{
+        padding-top:.2rem;
+        padding-left:.3rem;
+    }
+
 </style>
